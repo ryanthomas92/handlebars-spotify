@@ -17,7 +17,7 @@ $(document).ready(function() {
   var $loading = $('#loading');
 
   // compile handlebars template
-  var source = $('#tracks-template').html();
+  var source = $('#track-template').html();
   var template = Handlebars.compile(source);
 
   // submit form to search spotify API
@@ -68,11 +68,16 @@ $(document).ready(function() {
     // hide loading gif
     $loading.hide();
 
-    // pass in data to render in the template
-    var trackHtml = template({ tracks: trackResults });
+    // for each result (if there are results):
+    trackResults.forEach(function(trackData){
+      // pass in data to render in the template
+      var trackHtml = template({ track: trackData });
 
-    // append html to the view
-    $results.append(trackHtml);
+      // append html to the view
+      $results.append(trackHtml);
+    });
+    // if there weren't results, display a helpful no results message
+    $results.append("<p class=\"text-center\">No results</p>");
   }
 
 
