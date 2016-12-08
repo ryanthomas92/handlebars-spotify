@@ -44,14 +44,14 @@
         </div>
         <br>
         <div id="results">
+          <script id="results-template" type="text/x-handlebars-template">
           <div class="row">
             <div class="col-xs-4">
-              <img alt="ablum image" src="https://c2.staticflickr.com/4/3807/9158624159_63a9e67008_q.jpg" class="img-responsive">
+              <img alt="ablum image" src="{{albumImg}}" class="img-responsive">
             </div>
             <div class="col-xs-8">
-              <p><strong>Kitten</strong> by Jennifer C. (metaphoricalplatypus) on Flickr</p>
-              <p>
-                 <a href="https://www.flickr.com/photos/29638108@N06/9158624159/in/photolist-eXjkT6-qnB2Sv-e4qh7t-eXvB95-pK8vLC-e4qh9F-9F5Ae8-eXjn3n-e4vpF3-hpzZHZ-pZnbRY-e4qaUt-o6iLym-eXvJvb-fd7sCV-e4wskw-e4qVzz-6nNG28-eXvKwh-e4vqk7-pK5kbJ-q6kS6a-pqMWd5-e4qdxZ-as6tF5-e4pPpp-e4wxwE-eXiZ2Z-hbxVPQ-hbxVDu-e4qVgi-e4vq7f-eXvzEj-eXvBy9-e4qUw2-8Z6hSb-e4vPjU-e4vLGu-nMpYid-e4vqth-e4qVSt-e4qW9X-8Z65C7-e4vPZ7-hpBuQn-e4pN82-eXiZCM-e4vqzh-e4pN5Z-aj9dhd" target="_blank" class="btn btn-sm btn-default">
+              <p><strong>{{songTitle}}</strong> by {{artistName}}</p>
+                 <a href="{{previewUrl}}" target="_blank" class="btn btn-sm btn-default">
                    Preview
                    <span class="glyphicon glyphicon-play"></span>
                  </a>
@@ -59,6 +59,7 @@
             </div>
           </div>
           <hr>
+        </script>
         </div>
       </div>
     </div>

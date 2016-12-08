@@ -84,3 +84,14 @@ $(document).ready(function() {
   }
 
 });
+
+var source = $("#results").html();
+var template = Handlebars.compile(source);
+
+trackResults.forEach(function(songs) {
+  var resultHtml = template({
+  albumImg: result.album.images[0].url,
+  songTitle: result.name,
+  artistName: result.artists[0].name,
+  previewUrl: result.preview_url
+});
